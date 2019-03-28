@@ -1,0 +1,20 @@
+1. Dependent Types and Space/Time
+
+Dependent types are given by types which depends on context. That is,
+
+C, x : A |- y : B  then  C |- (\x. y) : PI (x : A. B)
+
+for dependent product.
+
+But if the variable x cannot separately exist (like space and time), it is impossible to directly put it in the context.
+
+Thus, we introduce a pair which represents certain position (of space or time) and value, and use it instead of each variable.
+
+Let's call it `Pt t a`. Now, context can be represented as
+
+C, p : Pt t A |- v : V
+
+For a trivial case of V being constant, this leads to
+
+C |- (\p. v) : Pt t A -> V
+
